@@ -66,10 +66,11 @@ ORDER BY comment DESC;
 --6. How many different user IDs have posted content?
 --Type: Counting distinct values.
 
-SELECT user_id, COUNT(*) as total_posts FROM posts
-Group BY user_id;
+SELECT COUNT(DISTINCT user_id) as unique_user_id_posts FROM posts;
 
---ANSWER:
+
+--ANSWER: This query returns that there have been 50 different user IDs that have posted content.
+--RESOURCE: https://www.baeldung.com/sql/counting-distinct-values-conditions#:~:text=The%20COUNT%20function%20in%20SQL,FROM%20Faculty%20WHERE%20active%20=%20TRUE;
 ------------------------------------------------------------------------------------
 
 --7. What user has the most people following them? (return the user_id)
@@ -81,8 +82,8 @@ ORDER BY COUNT(*) DESC
 LIMIT 5;
 
 --ANSWER: I ran this with a 'Limit' 1 and the return was 1 follower. So I ran it with 'Limit' 5
---to see what the reurn was. I see that it appears that all users have only 1 follower. Or my
---query is incorrect.
+--  to see what the reurn was. I see that it appears that all users have only 1 follower. Or my
+--  query is incorrect.
 ------------------------------------------------------------------------------------------------
 
 --8. From users who joined in February 2023, how many have usernames containing 'john'?
@@ -101,7 +102,7 @@ GROUP BY username
 ORDER BY COUNT(*);
 
 --ANSWER: adam_johnson and marcus_johnson wre users created from February 1, 2023 to February 28, 2023 
---and all have 'john' in their usernames.
+--  and all have 'john' in their usernames.
 ----------------------------------------------------------------------------------------------------
 
 --9. From users who joined in March 2023, how many have usernames containing 'mar'?
@@ -113,7 +114,7 @@ GROUP BY username
 ORDER BY COUNT(*);
 
 --ANSWER: kate_martinez, Marcus_johnson, omar_hassan, rosa_martinez and tamara_ivanova were
---users who were created from March 1, 2023 to March 31, 2023 and all have 'mar' in their usernames.
+--  users who were created from March 1, 2023 to March 31, 2023 and all have 'mar' in their usernames.
 ---------------------------------------------------------------------------------------------------
 
 --10. What post has the most reactions? (return the post_id)
