@@ -51,7 +51,7 @@ GROUP BY username
 ORDER BY users;
 
 
---Answer: 2 users, frank-miller and ulrich weber.
+--ANSWER: 2 users, frank-miller and ulrich weber.
 
 --5. What post has the most comments? (return the post_id)
 --Type: Aggregation, grouping, ordering, limiting.
@@ -60,7 +60,7 @@ SELECT post_id, COUNT(*) FROM comments
 GROUP BY post_id
 ORDER BY comment DESC;
 
---Answer: All posts have the same number of comments, which is 5.
+--ANSWER: All posts have the same number of comments, which is 5.
 
 --6. How many different user IDs have posted content?
 --Type: Counting distinct values.
@@ -77,7 +77,7 @@ GROUP BY followed_id, follower_id
 ORDER BY user_id DESC
 LIMIT 5;
 
---Answer: 
+--ANSWER: 
 
 
 --8. From users who joined in February 2023, how many have usernames containing 'john'?
@@ -95,7 +95,7 @@ WHERE username LIKE '%john%' AND created_at >= '2023-02-01' <= '2023-02-28'
 GROUP BY username
 ORDER BY COUNT(*);
 
---Answer: adam_johnson and marcus_johnson wre users created from February 1, 2023 to February 28, 2023 
+--ANSWER: adam_johnson and marcus_johnson wre users created from February 1, 2023 to February 28, 2023 
 --and all have 'john' in their usernames.
 
 --9. From users who joined in March 2023, how many have usernames containing 'mar'?
@@ -106,7 +106,7 @@ WHERE username LIKE '%mar%' AND created_at >= '2023-03-01' <= '2023-03-31'
 GROUP BY username
 ORDER BY COUNT(*);
 
---Answere: kate_martinez, Marcus_johnson, omar_hassan, rosa_martinez and tamara_ivanova were
+--ANSWER: kate_martinez, Marcus_johnson, omar_hassan, rosa_martinez and tamara_ivanova were
 --users who were created from March 1, 2023 to March 31, 2023 and all have 'mar' in their usernames.
 
 --10. What post has the most reactions? (return the post_id)
@@ -117,4 +117,4 @@ FROM reactions
 GROUP BY post_id
 ORDER BY reaction_count DESC;
 
---Answer: Every post has the same number of reactions, which is 5.
+--ANSWER: Every post has the same number of reactions, which is 5.
